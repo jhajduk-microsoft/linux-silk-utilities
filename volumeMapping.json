@@ -1,0 +1,26 @@
+[
+    {
+        "vendorspec": "Logical/Physical Sector size:           512 bytes",
+        "commands": {
+            "pvcreate1": "pvcreate /dev/mapper/mpathb /dev/mapper/mpathc /dev/mapper/mpathd /dev/mapper/mpathe /dev/mapper/mpathf /dev/mapper/mpathg /dev/mapper/mpathh /dev/mapper/mpathi",
+            "vgcreatee": "vgcreate prdvg /dev/mapper/mpathb /dev/mapper/mpathc /dev/mapper/mpathd /dev/mapper/mpathe /dev/mapper/mpathf /dev/mapper/mpathg /dev/mapper/mpathh /dev/mapper/mpathi",
+            "lvcreate": "lvcreate -L 80T -i 8 -I 4M -n epicprd01lv prdvg",
+            "mkfs.xfs": "mkfs.xfs /dev/mapper/prdvg-epicprd01lv",
+            "mkdir": "/epic/prd01",
+            "mount": "mount /dev/mapper/prdvg-epicprd01lv /epic/prd01",
+            "pvcreate2": "pvcreate /dev/mapper/mpathaa1 /dev/mapper/mpathab1 /dev/mapper/mpathaf1 /dev/mapper/mpathae1 /dev/mapper/mpathag1/dev/mapper/mpathah1 /dev/mapper/mpathac1 /dev/mapper/mpathad1",
+            "mapping_1": "/dev/mapper/mpathai1 /epic/mdrp/jrn ext4 _netdev 0 0",
+            "mapping_2": "/dev/mapper/mpathaa1 /epic/mdrp01 ext4 _netdev 0 0",
+            "mapping_3": "/dev/mapper/mpathab1 /epic/mdrp02 ext4 _netdev 0 0",
+            "mapping_4": "/dev/mapper/mpathac1 /epic/mdrp03 ext4 _netdev 0 0",
+            "mapping_5": "/dev/mapper/mpathad1 /epic/mdrp04 ext4 _netdev 0 0",
+            "mapping_6": "/dev/mapper/mpathae1 /epic/mdrp05 ext4 _netdev 0 0",
+            "mapping_7": "/dev/mapper/mpathaf1 /epic/mdrp06 ext4 _netdev 0 0",
+            "mapping_8": "/dev/mapper/mpathag1 /epic/mdrp07 ext4 _netdev 0 0",
+            "mapping_9": "/dev/mapper/mpathah1 /epic/mdrp08 ext4 _netdev 0 0"
+        }
+    }
+]
+
+
+

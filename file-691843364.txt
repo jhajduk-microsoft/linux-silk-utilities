@@ -1,0 +1,4 @@
+silk-centos
+	Logical/Physical Sector size:           512 bytes
+silk-centos
+	Logical/Physical Sector size:           512 bytes
