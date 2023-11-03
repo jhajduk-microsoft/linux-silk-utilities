@@ -1,4 +1,0 @@
-silk-centos,bytes
-silk-centos,bytes
-silk-centos,512 bytes
-silk-centos,512 bytes
