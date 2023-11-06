@@ -1,5 +1,6 @@
 [
     {
+        "guid": "512",
         "commands": [
         "sudo pvcreate /dev/sdf",
         "sudo vgcreate pvgrf /dev/sdf",

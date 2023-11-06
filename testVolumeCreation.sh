@@ -22,22 +22,22 @@ execute_command() {
 # Perform the required actions with error handling
 
 # Create Physical Volume (PV)
-execute_command "sudo pvcreate /dev/sdb" "Creating Physical Volume: /dev/sdb"
+execute_command "sudo pvcreate /dev/sdg" "Creating Physical Volume: /dev/sdg"
 
 # Create Volume Group (VG)
-execute_command "sudo vgcreate pri2 /dev/sdb" "Creating Volume Group: pri2"
+execute_command "sudo vgcreate prd /dev/sdg" "Creating Volume Group: uat"
 
 # Create Logical Volume (LV)
-execute_command "sudo lvcreate -L 1T -i 1 -I 2M -n epicprd0ilv2 pri2" "Creating Logical Volume: epicprd0ilv2"
+execute_command "sudo lvcreate -L 1T -i 1 -I 2M -n epiclv uat" "Creating Logical Volume: epiclv"
 
 # Format the Logical Volume with XFS
-execute_command "sudo mkfs.xfs /dev/pri2/epicprd0ilv2" "Formatting Logical Volume as XFS"
+execute_command "sudo mkfs.xfs /dev/uat/epiclv" "Formatting Logical Volume as XFS"
 
 # Create directories
-execute_command "sudo mkdir -p /epic3/prd013" "Creating Directories: /epic3/prd013"
+execute_command "sudo mkdir -p /epic6/uat" "Creating Directories: /epic6/uat"
 
 # Change to the /epic3 directory
-cd /epic3 || handle_error "Changing to directory /epic3 failed"
+cd /epic6 || handle_error "Changing to directory /epic6 failed"
 
 # Exit the script
 exit 0
