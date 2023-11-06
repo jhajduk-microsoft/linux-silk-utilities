@@ -1,0 +1,18 @@
+[
+    {
+        "commands": [
+        "sudo pvcreate /dev/sdf",
+        "sudo vgcreate pvgrf /dev/sdf",
+        "sudo lvcreate -L 1T -i 1 -I 2M -n epicprd0ilv2rf pvgrf",
+        "sudo mkfs.xfs /dev/pvgrf/epicprd0ilv2rf",
+        "sudo mkdir /epic5",
+        "sudo cd /epic5",
+        "sudo mkdir /prd015",
+        "sudo cd /prd015",
+        "exit"
+        ]
+    }
+]
+
+
+

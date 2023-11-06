@@ -1,2 +1,1 @@
 silk-centos
-silk-centos

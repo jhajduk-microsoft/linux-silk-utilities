@@ -4,11 +4,12 @@ $fileName = "file-" + (Get-Random) + ".txt"
 $fileLocation = ".\"
 
 New-Item -Path $fileLocation -Name $fileName
-$Credential = Get-Credential
 
 $devicePath = '/dev/sdc'
 
 # Get Computer Information
+$Credential = Get-Credential
+
 foreach ($computerNameOrIP in $targetComputerNamesOrIPs)
 {
    $computerNameOrIP = $computerNameOrIP.Trim()
