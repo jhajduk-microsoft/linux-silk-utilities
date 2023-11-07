@@ -37,7 +37,7 @@ foreach ($computerNameOrIP in $targetComputerNamesOrIPs)
 
    try
    {
-       # Change command to sdparm
+       # Change command to sdparm and grep the vendor specific property
        $output = $(Invoke-SSHCommand -SSHSession $ssh -Command "sudo hdparm -I ${devicePath} | grep 'Logical/Physical Sector size'").Output
 
        $output = $output -split '\s+' | Select-Object -Last 2
