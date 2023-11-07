@@ -1,9 +1,10 @@
+$guidKey = "512"
 $targetComputerNamesOrIPs = Get-Content -Path .\computerNamesOrIPs.txt
 
 #Get commands mapping - will later use this to compare GUIDS. For now, enter the appropriate commands for the machine
 $mappings = Get-Content -Path .\test-mapping.json -Raw
 $mappingObjects = $mappings | ConvertFrom-Json
-$machineCommands = $mappingObjects | Where-Object { $_.guid -eq "512" }
+$machineCommands = $mappingObjects | Where-Object { $_.guid -eq $guidKey }
 $commands = $machineCommands.commands
 
 #Log In
