@@ -16,11 +16,11 @@ vgcreate prdvg /dev/mapper/mpathb /dev/mapper/mpathc /dev/mapper/mpathd /dev/map
     error_exit "Failed to create volume group."
 
 # Create logical volume
-lvcreate -L 80T -i 8 -I 4M -n epicprd01lv prdvg ||
+lvcreate -L 80T -i 8 -I 4M -n epiclvname prdvg ||
     error_exit "Failed to create logical volume."
 
 # Make XFS filesystem
-mkfs.xfs /dev/mapper/prdvg-epicprd01lv ||
+mkfs.xfs /dev/mapper/prdvg-epiclvname ||
     error_exit "Failed to format the filesystem."
 
 # Create mount directory
@@ -28,7 +28,7 @@ mkdir -p /epic/prd01 ||
     error_exit "Failed to create mount directory."
 
 # Mount the filesystem
-mount /dev/mapper/prdvg-epicprd01lv /epic/prd01 ||
+mount /dev/mapper/prdvg-epiclvname /epic/prd01 ||
     error_exit "Failed to mount the filesystem."
 
 # Create additional physical volumes
