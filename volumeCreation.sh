@@ -41,16 +41,16 @@ done
 execute_command "vgcreate prdvg /dev/mapper/mpathb /dev/mapper/mpathc /dev/mapper/mpathd /dev/mapper/mpathe /dev/mapper/mpathf /dev/mapper/mpathg /dev/mapper/mpathh /dev/mapper/mpathi" "Creating Volume Group: prdvg"
 
 # Create Logical Volume (LV)
-execute_command "lvcreate -L 80T -i 8 -I 4M -n epicprd01lv prdvg" "Creating Logical Volume: epicprd01lv"
+execute_command "lvcreate -L 80T -i 8 -I 4M -n epiclvname prdvg" "Creating Logical Volume: epiclvname"
 
 # Format the Logical Volume with XFS
-execute_command "mkfs.xfs /dev/mapper/prdvg-epicprd01lv" "Formatting Logical Volume as XFS"
+execute_command "mkfs.xfs /dev/mapper/prdvg-epiclvname" "Formatting Logical Volume as XFS"
 
 # Create mount directory
-execute_command "mkdir -p /epic/prd01" "Creating Mount Directory: /epic/prd01"
+execute_command "mkdir -p /epic/path" "Creating Mount Directory: /epic/path"
 
 # Mount the Logical Volume
-execute_command "mount /dev/mapper/prdvg-epicprd01lv /epic/prd01" "Mounting Logical Volume to /epic/prd01"
+execute_command "mount /dev/mapper/prdvg-epiclvname /epic/path" "Mounting Logical Volume to /epic/path"
 
 # Create Physical Volumes for the second set
 pvcreate_cmds=(
